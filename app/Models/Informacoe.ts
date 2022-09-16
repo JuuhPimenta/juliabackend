@@ -1,11 +1,15 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
-import User from './ User'
+
 
 export default class Informacoe extends BaseModel {
 
-  @column({isPrimary: true })
-  public clube: string
+  @column({ isPrimary: true })
+  public id: number
+
+  @column()
+  public time: string
+
 
   @column()
   public temporada: number
