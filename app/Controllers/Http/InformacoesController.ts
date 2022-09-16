@@ -2,36 +2,37 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Informacoe from 'app/Models/Informacoe'
 import InformacoeValidator from 'App/Validators/InformacoeValidator'
-import { Info } from 'node_modules/@types/luxon'
 
 export default class InformacoesController {
   public async index({ }: HttpContextContract) {
-    const Informacoe= await Informacoe.all()
-    return Informacoe
+    const Info = await Informacoe.all()
+    return Info
   }
 
   public async store({ request }: HttpContextContract) {
     const data = await request.validate(InformacoeValidator)
-    const Informacoe = await Info.create({ ...data })
-    return Informacoe
+    const Info = await Informacoe.create({ ...data })
+    return Info
   }
 
   public async show({ params, response }: HttpContextContract) {
     try {
-      const Informacoe = await Info.findOrFail(params.id)
-      return Informacoe
+      const Info= await Informacoe.findOrFail(params.id)
+      return Info
     } catch (error) {
       response.status(400).send("Informaçoes não encontrado!!!")
     }
   }
 
   public async update({ request, params, response }: HttpContextContract) {
-    const { name } = await request.validate(InformacoeValidator)
+    const { time, vitorias, temporada } = await request.validate(InformacoeValidator)
     try {
-      const Informacoe = await Info.findOrFail(params.id)
-      Informacoe.name = name
-      await Informacoe.save()
-      return Informacoe
+      const Info= await Informacoe.findOrFail(params.id)
+      Info.time = time
+      Info.vitorias = vitorias
+      Info.temporada = temporada
+      await Info.save()
+      return Info
 
     } catch (error) {
       response.status(400).send("Informaçao não encontrado!!!")
@@ -40,9 +41,9 @@ export default class InformacoesController {
 
   public async destroy({ params, response }: HttpContextContract) {
     try {
-      const Informacoe = await Info.findOrFail(params.id)
-      await Informacoe.delete()
-      return Informacoe
+      const Info = await Informacoe.findOrFail(params.id)
+      await Info.delete()
+      return Info
     } catch (error) {
       response.status(400).send("Informaçao não encontrado!!!")
     }

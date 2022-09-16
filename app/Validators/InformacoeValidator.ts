@@ -9,7 +9,7 @@ export default class InformacoeValidator {
    *
    * For example:
    * 1. The username must be of data type string. But then also, it should
-   *    not contain special characters or numbers.
+   *    not contain stpecial characters or numbers.
    *    ```
    *     schema.string({}, [ rules.alpha() ])
    *    ```
