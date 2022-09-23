@@ -27,4 +27,4 @@ Route.get('/', async () => {
 Route.post("/register", "AuthController.register")
 Route.post("/login", "AuthController.login")
 
-Route.resource("informacoes", 'informacoesController').apiOnly()
+Route.resource("informacoes", 'InformacoesController').apiOnly()

@@ -5,7 +5,7 @@ Authorization: Bearer MQ.B8-wkDDuRF0qO9NUTsJF61QrtgsUH_a_TUXvfPLBTWTAy7da5DN_RQi
 
 {
     "time": "Brooklyn Nets",
-    "temporada": "2021/22",
+    "temporada": "2021",
     "vitorias" : "100"
 }
 
@@ -16,22 +16,22 @@ Authorization: Bearer MQ.B8-wkDDuRF0qO9NUTsJF61QrtgsUH_a_TUXvfPLBTWTAy7da5DN_RQi
 
 
 ######### Listar Informaçao específica
-GET http://127.0.0.1:3333/informacoes HTTP/1.1
+GET http://127.0.0.1:3333/informacoes/1 HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer MQ.B8-wkDDuRF0qO9NUTsJF61QrtgsUH_a_TUXvfPLBTWTAy7da5DN_RQiamr4V
 
 ######### Alterar Informaçao
-PUT http://127.0.0.1:3333/informacoes HTTP/1.1
+PUT http://127.0.0.1:3333/informacoes/1 HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer MQ.B8-wkDDuRF0qO9NUTsJF61QrtgsUH_a_TUXvfPLBTWTAy7da5DN_RQiamr4V
 
 {
     "time": "Brooklyn Nets",
-    "temporada": "2022/23",
+    "temporada": "2022",
     "vitorias" : "80"
 }
 
 ######### Apagar Informaçao
-DELETE http://127.0.0.1:3333/informacoes HTTP/1.1
+DELETE http://127.0.0.1:3333/informacoes/1 HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer MQ.B8-wkDDuRF0qO9NUTsJF61QrtgsUH_a_TUXvfPLBTWTAy7da5DN_RQiamr4V

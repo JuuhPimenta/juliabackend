@@ -1,6 +1,6 @@
 
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import Informacoe from 'app/Models/Informacoe'
+import Informacoe from 'App/Models/Informacoe'
 import InformacoeValidator from 'App/Validators/InformacoeValidator'
 
 export default class InformacoesController {
