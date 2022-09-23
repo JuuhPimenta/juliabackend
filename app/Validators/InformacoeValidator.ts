@@ -1,4 +1,4 @@
-import { schema, rules} from '@ioc:Adonis/Core/Validator'
+import { schema, rules, CustomMessages} from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class InformacoeValidator {
@@ -26,18 +26,8 @@ export default class InformacoeValidator {
     time: schema.string({}, [
       rules.required()
     ]),
-
-
-  public schema = schema.create({
-    vitorias: schema.string({}, [
-      rules.required()
-    ]),
-  
-
-  public schema = schema.create({
-    temporada: schema.string({}, [
-      rules.required()
-    ]),
+    vitorias: schema.number(),
+    temporada: schema.number(),
   })
 
 
@@ -52,5 +42,9 @@ export default class InformacoeValidator {
    * }
    *
    */
+   public messages: CustomMessages = {
+    required: "O {{field}} é obrigatorio para se registrar !!!",
+   
+  }
 
-    }
+}
